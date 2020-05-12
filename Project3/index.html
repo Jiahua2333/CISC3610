@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Data Visualization</title>
+
+<!--The <SCRIPT> tags are processed as they are encountered. -->
+<!-- <script src="pikachu.js"></script>
+<script src="animation.js"></script>
+<script src="loading.js"></script>
+<script src="bubble.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+
+<script src="data.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<!-- <img id="scream" width="200" height="170" src="./Capture.PNG" alt="Bubble"> -->
+<div id="scene" style = "text-align:center;">
+<canvas id="myCanvas" width="1280" height="480"></canvas>
+</div>
+<div id="scene" style = "text-align:center;">
+<canvas id="myCanvas2" width="1280" height="480"></canvas>
+</div>
+
+
+<!-- <script>
+new Chart(document.getElementById("myCanvas"), {
+    type: 'doughnut',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+</script> -->
+<script src="showChart.js"></script>
+
+</body>
+</html>
