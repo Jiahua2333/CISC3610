@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Voice Recognition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <audio id="Speak">
+        <source src="./audio/Speak.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="Stop">
+        <source src="./audio/Stop.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+</head>
+
+<body style="text-align: center">
+    <h2> Voice Recognition </h3>
+    <p>
+        This website is about voice recognition. You can change something when you speak some keywords.<br>   
+        <b>Click Start to ready speak. Click Stop to stop or Click cancel to cancel voice recognition. </b><br>
+        After pressed start button,<br> you can say <strong>COLOR</strong>, followed by a color, to set the color of the circle.
+        You can say <strong>BACKGROUND</strong>, followed by a color, to set the color of the background. <br>
+        You can also say <strong>SIZE</strong>, followed by a number from 1 to 300, to set the diameter of the circle.
+        If you say the word, <strong>HELP</strong>, you can hear the instruction to use. <br>
+        In addition, you can say the word, <strong>ABOUT</strong>, to hear the description of this website.
+	</p>
+    <button id="button" onclick="ButtonController()">Speak</button>
+    <button id="cancel" onclick="Cancel()">Cancel</button>
+
+    <br>
+    <canvas id="myCanvas" width="800" height="600"> </canvas>
+
+
+
+</body>
+
+<script src="Voice Recognition.js"></script>
+
+</html>
