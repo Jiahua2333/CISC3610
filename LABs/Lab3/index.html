@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+</head>
+
+<body>
+
+    <h1>Notebook</h1>
+
+    <form action="/action_page.php">
+        <label for="title"> Title: </label>
+        <input type="text" id="title" name="title" maxlength="40" size="40" oninput="save()"><br><br>
+        <label for="box"> Notes: </label> <br>
+        <textarea id="box" rows="10" cols="80" oninput="save()">
+        </textarea>
+
+<!--         <input type="submit" value="Submit"> -->		
+    </form>
+	<button id = "button1" type="button" onclick = "remove()">Clear</button></br>
+	<button id = "button2" type="button" onclick = "undo()">Undo</button>
+    <p id="demo"></p>
+	
+	<script>
+		var pre_t;
+        var pre_b;
+        function save() {
+			pre_t = localStorage.getItem("title");
+			pre_b = localStorage.getItem("box");
+            var t = document.getElementById("title").value;
+            var b = document.getElementById("box").value;
+            //   document.getElementById("demo").innerHTML = t + " " + b;
+		
+
+            //var myObj = { "title": x, "box": b }; 
+            //var yJSON = JSON.stringify(myObj); 
+            localStorage.setItem("title", t);
+            localStorage.setItem("box", b);
+            /*
+                        var a = localStorage.getItem("title");
+                        var c = localStorage.getItem("box");
+                        document.getElementById("demo").innerHTML = a + " " + c;
+            */
+
+        }
+        function restore() {
+
+            var a = localStorage.getItem("title");
+            var c = localStorage.getItem("box");
+            if (a != null) {
+                document.getElementById("title").value = a;     
+            }
+			if(c != null){
+				document.getElementById("box").value = c;
+			}
+			if(a == null && c == null){
+				document.getElementById("title").value = " ";
+				document.getElementById("box").value = " ";
+			}
+        }
+		function remove(){
+			//document.getElementById("button1").innerHTML = "Cleared";
+			localStorage.removeItem("title");
+			localStorage.removeItem("box");
+			document.getElementById("title").value = " ";
+			document.getElementById("box").value = " ";	
+		}
+		
+		
+		function undo(){
+            var cur_t = localStorage.getItem("title");
+            var cur_b = localStorage.getItem("box"); 
+			document.getElementById("title").value = pre_t;
+			document.getElementById("box").value = pre_b;
+			localStorage.setItem("title", pre_t);
+            localStorage.setItem("box", pre_b);
+			pre_t = cur_t;
+			pre_b = cur_b;
+		}
+		
+        restore();
+    </script>
+
+
+</body>
+
+</html>
